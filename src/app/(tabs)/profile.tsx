@@ -1,5 +1,5 @@
 import { theme } from '@/theme'
-import { View, StyleSheet, Text } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
 export default function Profile() {
   return (
@@ -19,6 +19,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 22,
     color: theme.colors.white,
-    fontFamily: theme.fontFamily.bold
+    fontFamily: theme.fontFamily.bold,
   },
 })

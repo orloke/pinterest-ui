@@ -1,3 +1,4 @@
+import { theme } from '@/theme'
 import {
   Roboto_400Regular,
   Roboto_500Medium,
@@ -8,6 +9,7 @@ import { Slot } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -24,8 +26,10 @@ export default function Layout() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <StatusBar barStyle="light-content" />
-      {fontsLoaded && <Slot />}
+      <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.black }}>
+        <StatusBar barStyle="light-content" />
+        {fontsLoaded && <Slot />}
+      </SafeAreaView>
     </GestureHandlerRootView>
   )
 }
